@@ -87,8 +87,6 @@ def train_all_models(data_path="data/fund_dataset.csv", model_dir="models", repo
             cv=5 # Cross-validation to prevent leakage in meta-learner
         )
         
-        # Stacking handles its own scaling internally for LR, but since we are mixing tree models, 
-        # using the scaled data won't hurt the trees and helps the ElasticNet.
         stacking_model.fit(X_train_scaled, y_train)
         stacking_preds = stacking_model.predict(X_test_scaled)
         stacking_probs = stacking_model.predict_proba(X_test_scaled)[:, 1]
@@ -131,7 +129,7 @@ def train_all_models(data_path="data/fund_dataset.csv", model_dir="models", repo
     # Save model and scaler for later use (e.g., SIP Simulation & SHAP)
     os.makedirs(model_dir, exist_ok=True)
     joblib.dump(final_model, f"{model_dir}/best_classifier.pkl")
-    joblib.dump(scaler, f"{model_dir}/scaler.pkl") # Important: SHAP will need the scaler
+    joblib.dump(scaler, f"{model_dir}/scaler.pkl") 
     
     print("  ✓ Final model, scaler, & metrics saved")
 
