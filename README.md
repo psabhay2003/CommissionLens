@@ -48,7 +48,7 @@ CommissionLens/
 
 ```bash
 # 1. Clone & install
-git clone https://github.com/yourname/CommissionLens.git
+git clone https://github.com/psabhay2003/CommissionLens.git
 cd CommissionLens
 pip install -r requirements.txt
 
