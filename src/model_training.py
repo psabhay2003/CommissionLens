@@ -11,7 +11,7 @@ from catboost import CatBoostClassifier
 from sklearn.metrics import accuracy_score, roc_auc_score, f1_score, classification_report
 from sklearn.preprocessing import StandardScaler
 
-def run_model_training(data_path="data/fund_dataset.csv", model_dir="models", report_dir="reports"):
+def train_all_models(data_path="data/fund_dataset.csv", model_dir="models", report_dir="reports"):
     print("\n🔹 STAGE 4 / 6 — MODEL TRAINING (MLP & STACKING)")
     
     # 1. Load Data
@@ -136,4 +136,4 @@ def run_model_training(data_path="data/fund_dataset.csv", model_dir="models", re
     print("  ✓ Final model, scaler, & metrics saved")
 
 if __name__ == "__main__":
-    run_model_training()
+    train_all_models()
