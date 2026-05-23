@@ -3,7 +3,7 @@ import joblib
 import os
 # ... (keep your existing imports for plotting/simulation) ...
 
-def run_sip_simulation(data_path="data/fund_dataset.csv", model_dir="models", report_dir="reports"):
+def run_sip_backtest(data_path="data/fund_dataset.csv", model_dir="models", report_dir="reports"):
     print("\n🔹 STAGE 6 / 6 — SIP BACK-VALIDATION")
     
     # 1. Load the dataset
