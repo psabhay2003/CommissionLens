@@ -1,0 +1,13 @@
+{
+  "model_guided": {
+    "xirr": 0.22678496807257376,
+    "final_value": 526218.9225706018,
+    "invested": 300000
+  },
+  "naive_regular": {
+    "xirr": 0.19510081142602767,
+    "final_value": 487370.6279359371,
+    "invested": 300000
+  },
+  "xirr_edge_pct": 3.1684156646546087
+}
