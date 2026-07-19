@@ -1,0 +1,35 @@
+seed: 7
+data_dir: data
+artifacts_dir: artifacts
+
+data:
+  source: synthetic          # synthetic | mfapi
+  n_funds: 220
+  start_date: "2013-01-01"   # early start gives lookback for rolling + sequence windows
+  end_date: "2023-12-31"
+  risk_free_annual: 0.06
+  benchmark_name: "NIFTY 50 TRI"
+
+features:
+  rolling_window_months: 36
+  min_history_months: 24
+
+model:
+  sequence_length: 8          # quarters of history fed to the network
+  hidden_size: 64
+  num_layers: 2
+  dropout: 0.25
+  classification_weight: 0.5
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_size: 128
+  max_epochs: 120
+  patience: 15
+  val_fraction: 0.15
+  test_fraction: 0.20
+
+simulation:
+  monthly_investment: 5000
+  start_date: "2018-07-01"
+  end_date: "2023-06-30"
+  top_decile: 0.10
